@@ -9,35 +9,194 @@
 </head>
 <body>
 
-    <header>
-        <h1>Fast Calculation</h1>
-        <p>Monte sua equação e descubra o resultado!</p>
+    <header class="topo">
+        <div class="container">
+            <span class="etiqueta">MATEMÁTICA APLICADA</span>
+            <h1>Fast Calculation</h1>
+            <p>Resolva sistemas de duas equações e entenda cada etapa do cálculo.</p>
+        </div>
     </header>
 
     <main class="container">
-        <h2>Monte sua equação</h2>
 
-        <div class="equation">
-            <span>f(x) =</span>
+        <!-- EXEMPLO PRÁTICO -->
+        <section class="secao exemplo">
+            <div class="secao-titulo">
+                <span class="numero">01</span>
+                <div>
+                    <h2>Exemplo prático</h2>
+                    <p>Entenda como um sistema linear pode resolver uma situação do dia a dia.</p>
+                </div>
+            </div>
 
-            <input type="number" id="a" placeholder="A" step="any">
+            <div class="exemplo-conteudo">
+                <div>
+                    <h3>A venda do fazendeiro Daniel</h3>
+                    <p>
+                        Daniel é um fazendeiro que vende arroz e feijão.
+                        O quilo do arroz custa <strong>R$ 10,00</strong> e o
+                        quilo do feijão custa <strong>R$ 5,00</strong>.
+                    </p>
+                    <p>
+                        Em um dia, ele vendeu <strong>10 kg</strong> dos dois
+                        produtos juntos e recebeu <strong>R$ 80,00</strong>.
+                    </p>
+                    <p class="pergunta">
+                        Quantos quilos de arroz e de feijão Daniel vendeu?
+                    </p>
+                </div>
 
-            <span>x +</span>
+                <div class="equacoes-exemplo">
+                    <span>Montando o sistema:</span>
+                    <p>x + y = 10</p>
+                    <p>10x + 5y = 80</p>
+                    <div class="legenda">
+                        <span><strong>x</strong> = quilos de arroz</span>
+                        <span><strong>y</strong> = quilos de feijão</span>
+                    </div>
+                </div>
+            </div>
 
-            <input type="number" id="b" placeholder="B" step="any">
-        </div>
+            <div class="resposta-exemplo">
+                <strong>Resposta do exemplo:</strong>
+                Daniel vendeu 6 kg de arroz e 4 kg de feijão.
+            </div>
+        </section>
 
-        <div class="value">
-            <label for="x">Escolha o valor de X:</label>
-            <input type="number" id="x" placeholder="Digite o valor de X" step="any">
-        </div>
+        <!-- CALCULADORA -->
+        <section class="secao calculadora">
+            <div class="secao-titulo">
+                <span class="numero">02</span>
+                <div>
+                    <h2>Calculadora</h2>
+                    <p>Informe os valores das duas equações para encontrar X e Y.</p>
+                </div>
+            </div>
 
-        <button id="calculate">Calcular</button>
+            <div class="instrucoes">
+                <strong>Como preencher?</strong>
+                <p>
+                    Escolha o sinal de cada coeficiente e digite seu valor.
+                    O campo depois do sinal de igualdade representa o resultado
+                    da equação.
+                </p>
+            </div>
 
-        <div id="result" class="result" hidden>
-            <h3>Resultado</h3>
-            <p id="answer"></p>
-        </div>
+            <form id="formulario">
+
+                <div class="equacao-card">
+                    <h3>Primeira equação</h3>
+
+                    <div class="equacao-inputs">
+                        <div class="campo">
+                            <label for="sinalA">Sinal de X</label>
+                            <select id="sinalA">
+                                <option value="1">+</option>
+                                <option value="-1">−</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label for="a">Coeficiente de X</label>
+                            <input type="number" id="a" min="0" step="any" value="1" required>
+                        </div>
+
+                        <span class="variavel">X</span>
+
+                        <div class="campo">
+                            <label for="sinalB">Sinal de Y</label>
+                            <select id="sinalB">
+                                <option value="1">+</option>
+                                <option value="-1">−</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label for="b">Coeficiente de Y</label>
+                            <input type="number" id="b" min="0" step="any" value="1" required>
+                        </div>
+
+                        <span class="variavel">Y</span>
+                        <span class="igual">=</span>
+
+                        <div class="campo resultado-campo">
+                            <label for="c">Resultado</label>
+                            <input type="number" id="c" step="any" value="10" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="equacao-card">
+                    <h3>Segunda equação</h3>
+
+                    <div class="equacao-inputs">
+                        <div class="campo">
+                            <label for="sinalD">Sinal de X</label>
+                            <select id="sinalD">
+                                <option value="1">+</option>
+                                <option value="-1">−</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label for="d">Coeficiente de X</label>
+                            <input type="number" id="d" min="0" step="any" value="10" required>
+                        </div>
+
+                        <span class="variavel">X</span>
+
+                        <div class="campo">
+                            <label for="sinalE">Sinal de Y</label>
+                            <select id="sinalE">
+                                <option value="1">+</option>
+                                <option value="-1">−</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label for="e">Coeficiente de Y</label>
+                            <input type="number" id="e" min="0" step="any" value="5" required>
+                        </div>
+
+                        <span class="variavel">Y</span>
+                        <span class="igual">=</span>
+
+                        <div class="campo resultado-campo">
+                            <label for="f">Resultado</label>
+                            <input type="number" id="f" step="any" value="80" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="botoes">
+                    <button type="submit" class="botao resolver">
+                        Resolver sistema
+                    </button>
+
+                    <button type="button" id="limpar" class="botao limpar">
+                        Limpar campos
+                    </button>
+
+                    <button type="button" id="usarExemplo" class="botao exemplo-btn">
+                        Usar exemplo
+                    </button>
+                </div>
+            </form>
+
+            <!-- RESULTADO -->
+            <section id="resultado" class="resultado" aria-live="polite" hidden>
+                <h2>Resultado da resolução</h2>
+                <div id="mensagemResultado"></div>
+                <div id="passos"></div>
+            </section>
+
+        </section>
+
+        <footer>
+            <p>Fast Calculation • Matemática Aplicada</p>
+            <p>Desenvolvida com HTML, CSS e JavaScript.</p>
+        </footer>
+
     </main>
 
     <script src="script.js"></script>
