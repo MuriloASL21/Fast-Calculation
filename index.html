@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Calculation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Fast Calculation</h1>
+        <p>Monte sua equação e descubra o resultado!</p>
+    </header>
+
+    <main class="container">
+        <h2>Monte sua equação</h2>
+
+        <div class="equation">
+            <span>f(x) =</span>
+
+            <input type="number" id="a" placeholder="A" step="any">
+
+            <span>x +</span>
+
+            <input type="number" id="b" placeholder="B" step="any">
+        </div>
+
+        <div class="value">
+            <label for="x">Escolha o valor de X:</label>
+            <input type="number" id="x" placeholder="Digite o valor de X" step="any">
+        </div>
+
+        <button id="calculate">Calcular</button>
+
+        <div id="result" class="result" hidden>
+            <h3>Resultado</h3>
+            <p id="answer"></p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
